@@ -1,0 +1,9 @@
+.container{
+    max-width:38rem;
+    display:flex;
+    align-items:center;
+    align-content:center;
+    flex-direction:column;
+    justify-content: center;
+    outline:5px solid gold;
+}

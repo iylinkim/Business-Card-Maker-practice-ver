@@ -1,0 +1,15 @@
+@value makerDarkBlue, makerWhite from '../../common/colors.css';
+
+.header{
+    text-align:center;
+    background-color:makerDarkBlue; 
+    padding:10px 0;
+    width:100%;
+}
+.logo{
+    
+}
+.logo_text{
+    font-size:2rem;
+    color:makerWhite;
+}

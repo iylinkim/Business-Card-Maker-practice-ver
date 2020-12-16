@@ -39,5 +39,4 @@ class AuthService {
     fbase.auth().signOut();
   }
 }
-
 export default AuthService;

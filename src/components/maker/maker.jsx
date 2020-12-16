@@ -1,3 +1,5 @@
+import Editor from "components/editor/editor";
+import Preview from "components/preview/preview";
 import Footer from "components/footer/footer";
 import Header from "components/header/header";
 import React, {useEffect} from "react";
@@ -42,9 +44,12 @@ const Maker = ({authService}) => {
   return (
     <section>
       <Header onLogout={onLogout} />
+      <div>
+        <Editor />
+        <Preview />
+      </div>
       <Footer />
     </section>
   );
 };
-
 export default Maker;

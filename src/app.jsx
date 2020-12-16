@@ -22,18 +22,15 @@ import Login from "./components/login/login";
 // export default App;
 
 function App({authService}) {
-  return (
-    <HashRouter>
+  return <HashRouter>
       <Switch>
-        <Route exact path='/'>
-          <Login authService={authService} />
-        </Route>
-        <Route exact path='/maker'>
-          <Maker authService={authService} />
-        </Route>
+          <Route exact path="/">
+              <Login authService={authService}/>
+          </Route>
+          <Route exact path="/maker">
+              <Maker authService={authService}/>
+          </Route>
       </Switch>
-    </HashRouter>
-  );
+  </HashRouter>
 }
-
 export default App;

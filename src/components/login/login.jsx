@@ -53,19 +53,20 @@ const Login = ({authService}) => {
       .login(event.currentTarget.innerText)
       .then(result => goToMaker(result.user));
   };
-
   useEffect(() => {
-    authService.onAuthChange(user => {
-      user && goToMaker(user.uid);
-    });
+      authService.onAuthChange(user => {
+          user && goToMaker(user.uid);
+      });
   });
   return (
-    <section>
+    <section className={styles.container}>
       <Header />
-      <ul>
-        <li onClick={onLogin}>Google</li>
-        <li onClick={onLogin}>Github</li>
-      </ul>
+      <section className={styles.login}>
+        <ul className={styles.login_inner}>
+          <li className={styles.login_button} onClick={onLogin}>Google</li>
+          <li className={styles.login_button} onClick={onLogin}>Github</li>
+        </ul>
+      </section>
       <Footer />
     </section>
   );
