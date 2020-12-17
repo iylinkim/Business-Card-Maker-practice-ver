@@ -2,7 +2,7 @@ import Editor from "components/editor/editor";
 import Preview from "components/preview/preview";
 import Footer from "components/footer/footer";
 import Header from "components/header/header";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import styles from "./maker.module.css";
 
@@ -30,10 +30,35 @@ import styles from "./maker.module.css";
 // export default Maker;
 
 const Maker = ({authService}) => {
-  const history = useHistory();
+  const [cards, setCards] = useState({
+    1: {
+      id: 1,
+      name: "IYLIN",
+      company: "instagram",
+      theme: "dark",
+      title: "frontend",
+      email: "iylin@gmail.com",
+      message: "I can do it",
+      fileURL: "",
+    },
+    2: {
+      id: 2,
+      name: "IYLIN",
+      company: "instagram",
+      theme: "dark",
+      title: "frontend",
+      email: "iylin@gmail.com",
+      message: "I can do it",
+      fileURL: "",
+    },
+  });
+
   const onLogout = () => {
     authService.logout();
   };
+
+  const history = useHistory();
+
   useEffect(() => {
     authService.onAuthChange(user => {
       if (!user) {
@@ -41,12 +66,34 @@ const Maker = ({authService}) => {
       }
     });
   });
+
+  const createOrUpdateCard = card => {
+    setCards(cards => {
+      const updated = {...cards};
+      updated[card.id] = card;
+      return updated;
+    });
+  };
+
+  const deleteCard = card => {
+    setCards(cards => {
+      const updated = {...cards};
+      delete updated[card.id];
+      return updated;
+    });
+  };
+
   return (
     <section>
       <Header onLogout={onLogout} />
       <div>
-        <Editor />
-        <Preview />
+        <Editor
+          cards={cards}
+          addCard={createOrUpdateCard}
+          updateCard={createOrUpdateCard}
+          deleteCard={deleteCard}
+        />
+        <Preview cards={cards} />
       </div>
       <Footer />
     </section>
