@@ -1,0 +1,25 @@
+@value makerOrange, makerDarkGrey from 'common/colors.css';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  display: none;
+}
+
+.loading {
+  width: 25px;
+  height: 25px;
+  border: 2px solid makerDarkGrey;
+  border-radius: 50%;
+  border-right:2px solid makerOrange;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}

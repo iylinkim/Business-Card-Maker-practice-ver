@@ -1,0 +1,32 @@
+@value makerLightBlue from '../../common/colors.css';
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto 20px;
+  border-left: 1px solid makerLightBlue;
+  border-top: 1px solid makerLightBlue;
+}
+
+.form input,
+.form select,
+.form textarea,
+.form button,
+.fileInput {
+  width: 100%;
+  padding: 0.5em;
+  border: 0;
+  border-bottom: 1px solid makerLightBlue;
+  border-right: 1px solid makerLightBlue;
+}
+
+.form input,
+.form select {
+  flex: 1 1 30%;
+}
+
+.fileInput {
+  padding: 0;
+  flex: 1 1 50%;
+}

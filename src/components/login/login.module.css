@@ -1,9 +1,35 @@
+@value makerGrey from '../../common/colors.css';
+
 .container{
-    max-width:38rem;
+    width:480px;
     display:flex;
     align-items:center;
     align-content:center;
     flex-direction:column;
     justify-content: center;
-    outline:5px solid gold;
+}
+
+.login{
+    width:100%;
+    padding:15px 0;
+    text-align:center;
+}
+
+.login_text{
+    padding-bottom:20px;
+}
+
+.login_button{
+    width:90%;
+    margin:0 auto 10px;
+    line-height:40px;
+    text-align:center;
+    border:2px solid #000;
+    border-radius:30px;
+    font-size: 1.3rem;
+    list-style:none;
+    cursor:pointer;
+}
+.login_button:hover{
+    background-color:makerGrey;
 }

@@ -1,0 +1,5 @@
+.button {
+  border-right: 0;
+  border-bottom: 0;
+  flex: 1 1 50%;
+}
